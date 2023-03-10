@@ -1,9 +1,35 @@
 {
+  "main": "sequelAIze.js",
   "dependencies": {
-    "cli-table": "^0.3.11",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "openai": "^3.2.1",
     "sqlite3": "^5.1.4"
-  }
+  },
+  "name": "sequel.ai",
+  "description": "This application is designed to convert natural language queries into SQL queries, and then execute those SQL queries on a specific database. This document will explain how to use the sequelAIze.js library, configure the database connection, and modify the application to work with other database engines.",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trinly01/sequel.ai.git"
+  },
+  "keywords": [
+    "natural",
+    "language",
+    "processing",
+    "sql",
+    "database",
+    "openai",
+    "artificial",
+    "intelligence"
+  ],
+  "author": "Trinmar Boado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trinly01/sequel.ai/issues"
+  },
+  "homepage": "https://github.com/trinly01/sequel.ai#readme"
 }

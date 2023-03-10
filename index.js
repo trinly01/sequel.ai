@@ -14,8 +14,9 @@ app.post('/query', async (req, res) => {
   try {
     res.json(await sequelAIze(prompt, asyncQuery));
   } catch (error) {
-    res.status(500).json(error);
-    console.error(error)
+    console.log('Erroor', error.message);
+    res.status(500).json({Error: error.message, ...error});
+    // console.error(error)
   }
 });
 
