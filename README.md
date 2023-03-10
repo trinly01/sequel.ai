@@ -18,7 +18,7 @@ OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
 
 ### `DB_ENGINE`
 
-This variable is used to specify the database engine that the application will connect to. Currently, the only supported engine is `sqlite3`.
+This variable is used to specify the database engine that the application will connect to. examples:`sqlite3`, `mysql`, `postgre`.
 
 ### `OPENAI_API_KEY`
 
@@ -50,12 +50,9 @@ sequelAIze(prompt, asyncQuery).then(result => {
 });
 ``` 
 
-This example will execute the natural language prompt, generate an appropriate SQL query, and execute that query on the SQLite database. The resulting data will be returned in the `data` property of the object, and the SQL query will be returned in the `query` property.
+This example will execute the natural language prompt, generate an appropriate SQL query, and execute that query on the database. The resulting data will be returned in the `data` property of the object, and the SQL query will be returned in the `query` property.
 
-## Modify/Create asyncQuery Function
-
-1.  Locate the `asyncQuery` function in your code.
-2.  Modify the function to use the database driver and connection settings appropriate for your database.
+## asyncQuery Function
 
 The `asyncQuery` function is a key component of the App. It is responsible for executing SQL queries on the connected database based on the natural language input provided by the user.
 
@@ -63,9 +60,11 @@ To use this function, you should first ensure that the database is properly conf
 
 The `asyncQuery` function takes a single parameter, `query`, which is the SQL query to be executed. It should return the rows (result) of the executed query. You can create a Promise (resolve/reject) or use the normal `async/await` syntax for this purpose.
 
+
+
 ## Configuring the Database Connection
 
-The application is configured to connect to a SQLite database by default. To configure the database connection, you will need to modify the `database.js` file to use the appropriate database driver for your database engine.
+The example application `index.js` using the imported `database.js` is configured to connect to a SQLite database by default. To configure the database connection, you will need to modify the `database.js` file to use the appropriate database driver for your database engine.
 
 Here's an example of how to modify `database.js` to use MySQL instead of SQLite:
 
