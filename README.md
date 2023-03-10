@@ -1,6 +1,4 @@
-# sequel.AI - Natural Language to SQL Conversion App Documentation
-
-![sequel.ai.png](sequel.ai.png)
+# Natural Language to SQL Conversion App Documentation
 
 This application is designed to convert natural language queries into SQL queries, and then execute those SQL queries on a specific database. This document will explain how to use the sequelAIze.js library, configure the database connection, and modify the application to work with other database engines.
 
@@ -27,6 +25,34 @@ sequelAIze(prompt).then(result => {
 ``` 
 
 This example will execute the natural language prompt, generate an appropriate SQL query, and execute that query on the SQLite database. The resulting data will be returned in the `data` property of the object, and the SQL query will be returned in the `query` property.
+
+## Environment Variables
+
+This document describes the environment variables that are used in the `sequelAIze` application.
+
+### `.env` File
+
+The `.env` file is used to define the environment variables used in the application. The `.env` file should be located in the root directory of the application.
+
+```dotenv
+DB_ENGINE=sqlite
+PORT=3000
+OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
+``` 
+
+### Variables
+
+### `DB_ENGINE`
+
+This variable is used to specify the database engine that the application will connect to. Currently, the only supported engine is `sqlite3`.
+
+### `PORT`
+
+This variable is used to specify the port that the application will listen on. If this variable is not set, the default port will be `3000`.
+
+### `OPENAI_API_KEY`
+
+This variable is used to specify the API key for OpenAI. You can obtain an API key by creating an account at [https://beta.openai.com/signup/](https://beta.openai.com/signup/). Once you have an account, you can find your API key on the dashboard page. The API key is required for the natural language processing part of the application.
 
 ## Configuring the Database Connection
 
