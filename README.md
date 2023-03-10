@@ -5,6 +5,25 @@ Natural Language to Database Query Result! Say goodbye to the frustration of wri
 [facebook.com/Trinwhocode](https://www.facebook.com/Trinwhocode)  
 [linkedin.com/in/trinmar](https://www.linkedin.com/in/trinmar)
 
+## Environment Variables
+
+The `.env` file is used to define the environment variables used in the application. The `.env` file should be located in the root directory of the application.
+
+```dotenv
+DB_ENGINE=sqlite
+OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
+``` 
+
+### Variables
+
+### `DB_ENGINE`
+
+This variable is used to specify the database engine that the application will connect to. Currently, the only supported engine is `sqlite3`.
+
+### `OPENAI_API_KEY`
+
+This variable is used to specify the API key for OpenAI. You can obtain an API key by creating an account at [https://beta.openai.com/signup/](https://beta.openai.com/signup/). Once you have an account, you can find your API key on the dashboard page. The API key is required for the natural language processing part of the application.
+
 ## Using the sequelAIze.js Library
 
 The sequelAIze.js library exports a single function, `sequelAIze(prompt)`. This function takes a natural language prompt as its only argument, and returns a Promise that resolves to an object with two properties: `query` and `data`.
@@ -15,6 +34,13 @@ Here's an example of how to use the `sequelAIze` function:
 ```javascript
 const { sequelAIze } = require('sequel.ai');
 
+async function asyncQuery(query) {
+  // your SQL code execution here
+  // it should returns the rows (result)
+  // you can create a Promise (resolve/reject) or normal async/await
+  let rows = []
+  return rows;
+}
 
 const prompt = 'Show me all the customers from Los Angeles';
 sequelAIze(prompt, asyncQuery).then(result => {
@@ -26,33 +52,16 @@ sequelAIze(prompt, asyncQuery).then(result => {
 
 This example will execute the natural language prompt, generate an appropriate SQL query, and execute that query on the SQLite database. The resulting data will be returned in the `data` property of the object, and the SQL query will be returned in the `query` property.
 
-## Environment Variables
+## Modify/Create asyncQuery Function
 
-This document describes the environment variables that are used in the `sequelAIze` application.
+1.  Locate the `asyncQuery` function in your code.
+2.  Modify the function to use the database driver and connection settings appropriate for your database.
 
-### `.env` File
+The `asyncQuery` function is a key component of the App. It is responsible for executing SQL queries on the connected database based on the natural language input provided by the user.
 
-The `.env` file is used to define the environment variables used in the application. The `.env` file should be located in the root directory of the application.
+To use this function, you should first ensure that the database is properly configured and connected to the application. You can modify the `asyncQuery` function to work with different databases by updating the SQL code execution logic.
 
-```dotenv
-DB_ENGINE=sqlite
-PORT=3000
-OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
-``` 
-
-### Variables
-
-### `DB_ENGINE`
-
-This variable is used to specify the database engine that the application will connect to. Currently, the only supported engine is `sqlite3`.
-
-### `PORT`
-
-This variable is used to specify the port that the application will listen on. If this variable is not set, the default port will be `3000`.
-
-### `OPENAI_API_KEY`
-
-This variable is used to specify the API key for OpenAI. You can obtain an API key by creating an account at [https://beta.openai.com/signup/](https://beta.openai.com/signup/). Once you have an account, you can find your API key on the dashboard page. The API key is required for the natural language processing part of the application.
+The `asyncQuery` function takes a single parameter, `query`, which is the SQL query to be executed. It should return the rows (result) of the executed query. You can create a Promise (resolve/reject) or use the normal `async/await` syntax for this purpose.
 
 ## Configuring the Database Connection
 
