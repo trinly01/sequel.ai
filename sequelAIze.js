@@ -1,4 +1,3 @@
-const { asyncQuery } = require('./database');
 const { Configuration, OpenAIApi } = require('openai');
 
 const openaiConfiguration = new Configuration({
@@ -14,7 +13,7 @@ async function generateSqlQuery(prompt) {
   })).data.choices[0].text;
 }
 
-async function sequelAIze(prompt) {
+async function sequelAIze(prompt, asyncQuery) {
   tables = []
 
   const tableSchema = []

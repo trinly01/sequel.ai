@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 const { sequelAIze } = require('./sequelAIze');
+const { asyncQuery } = require('./database');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -11,7 +12,7 @@ app.post('/query', async (req, res) => {
   let { prompt } = req.body;
 
   try {
-    res.json(await sequelAIze(prompt));
+    res.json(await sequelAIze(prompt, asyncQuery));
   } catch (error) {
     res.status(500).json(error);
     console.error(error)
