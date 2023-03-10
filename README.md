@@ -1,6 +1,6 @@
-# Natural Language to SQL Conversion App Documentation
+# sequel.ai
 
-This application is designed to convert natural language queries into SQL queries, and then execute those SQL queries on a specific database. This document will explain how to use the sequelAIze.js library, configure the database connection, and modify the application to work with other database engines.
+Natural Language to Database Query Result! Say goodbye to the frustration of writing complex SQL queries - with sequel.ai, you can simply input your query in any Language (English, Cebuano, you name it!), get accurate, speedy results. Seamlessly converting natural language into SQL queries and executing them on your specified database. Need to change databases? No problem - our app is fully customizable and can be configured to work with any database engine. Try it today and experience the future of query building!
 
 [facebook.com/Trinwhocode](https://www.facebook.com/Trinwhocode)  
 [linkedin.com/in/trinmar](https://www.linkedin.com/in/trinmar)
@@ -14,7 +14,6 @@ Here's an example of how to use the `sequelAIze` function:
 
 ```javascript
 const { sequelAIze } = require('sequel.ai');
-const { asyncQuery } = require('./database');
 
 
 const prompt = 'Show me all the customers from Los Angeles';

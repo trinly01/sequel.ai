@@ -7,8 +7,8 @@
     "sqlite3": "^5.1.4"
   },
   "name": "sequel.ai",
-  "description": "This application is designed to convert natural language queries into SQL queries, and then execute those SQL queries on a specific database. This document will explain how to use the sequelAIze.js library, configure the database connection, and modify the application to work with other database engines.",
-  "version": "1.0.2",
+  "description": "Natural Language to Database Query Result! Say goodbye to the frustration of writing complex SQL queries.",
+  "version": "1.0.3",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
