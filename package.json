@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "cli-table": "^0.3.11",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "openai": "^3.2.1",
+    "sqlite3": "^5.1.4"
+  }
+}
