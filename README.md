@@ -13,11 +13,11 @@ Here's an example of how to use the `sequelAIze` function:
 
 
 ```javascript
-const { sequelAIze } = require('./sequelAIze');
+const { sequelAIze } = require('sequel.ai');
 
 
 const prompt = 'Show me all the customers from Los Angeles';
-sequelAIze(prompt).then(result => {
+sequelAIze(prompt, asyncQuery).then(result => {
   console.log(result);
 }).catch(error => {
   console.error(error);
