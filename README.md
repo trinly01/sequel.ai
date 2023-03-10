@@ -14,6 +14,7 @@ Here's an example of how to use the `sequelAIze` function:
 
 ```javascript
 const { sequelAIze } = require('sequel.ai');
+const { asyncQuery } = require('./database');
 
 
 const prompt = 'Show me all the customers from Los Angeles';
