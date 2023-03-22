@@ -9,10 +9,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.post('/query', async (req, res) => {
-  let { prompt } = req.body;
+  let { prompt, model } = req.body;
 
   try {
-    res.json(await sequelAIze(prompt, asyncQuery));
+    res.json(await sequelAIze(prompt, asyncQuery, model));
   } catch (error) {
     console.log('Erroor', error.message);
     res.status(500).json({Error: error.message, ...error});

@@ -43,7 +43,8 @@ async function asyncQuery(query) {
 }
 
 const prompt = 'Show me all the customers from Los Angeles';
-sequelAIze(prompt, asyncQuery).then(result => {
+const model = 'gpt-3.5-turbo';
+sequelAIze(prompt, asyncQuery, model).then(result => {
   console.log(result);
 }).catch(error => {
   console.error(error);
